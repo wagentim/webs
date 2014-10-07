@@ -2,12 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-		<title>main</title>
 		<meta name="description" content="">
 		<meta name="author" content="wagentim">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -21,12 +18,20 @@
 
 	<body>
 		<div class="fixed_headerbar_background">
-			<p class="fixed_headerbar_content">
-				text
-			</p>
-			<script type="text/javascript">
-				getTime()
-			</script>
+			<p class="fixed_headerbar_content"></p>
+			<script type="text/javascript">getTime()</script>
+		</div>
+		<div class="login_block">
+			<div class="login_title">
+				<p class="title">
+					Home Apps: Sign-up
+					<br>
+					<span class="sub_text">sign-up for more functions</span>
+					<hr>
+				</p>
+			</div>
+			<div></div>
+			<div class="login_content"></div>
 		</div>
 	</body>
 </html>

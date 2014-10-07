@@ -20,28 +20,13 @@
 	</head>
 
 	<body>
-		<div>
-			<header>
-				<h1>main</h1>
-			</header>
-			<nav>
-				<p>
-					<a href="/">Home</a>
-				</p>
-				<p>
-					<a href="/contact">Contact</a>
-				</p>
-			</nav>
-
-			<div>
-
-			</div>
-
-			<footer>
-				<p>
-					&copy; Copyright  by wagentim
-				</p>
-			</footer>
+		<div class="fixed_headerbar_background">
+			<p class="fixed_headerbar_content">
+				text
+			</p>
+			<script type="text/javascript">
+				getTime()
+			</script>
 		</div>
 	</body>
 </html>

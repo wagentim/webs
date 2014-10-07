@@ -11,7 +11,12 @@
 		<meta name="description" content="">
 		<meta name="author" content="wagentim">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
+		<link type="text/css" href="style/main.css" rel="stylesheet">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="js/mjs.js"></script>
+		<title>Home Apps</title>
 	</head>
 
 	<body>

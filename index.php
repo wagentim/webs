@@ -21,17 +21,36 @@
 			<p class="fixed_headerbar_content"></p>
 			<script type="text/javascript">getTime()</script>
 		</div>
+		<!-- Login Block -->
 		<div class="login_block">
+			<!-- Login Title -->
 			<div class="login_title">
 				<p class="title">
 					Home Apps: Sign-up
 					<br>
-					<span class="sub_text">sign-up for more functions</span>
+					<span class="sub_text">Sign-up for more functions</span>
 					<hr>
 				</p>
 			</div>
-			<div></div>
-			<div class="login_content"></div>
+			<br>
+			<!-- Longin Form -->
+			<div class="login_form_block">
+			
+			<form id="login" action="user.php">
+				<div id="user_name">
+					User Name: <input name="user_name" type="text" style="width:200px" align="right" />
+				</div>
+				<br>
+				<div id="pwd">
+					Password: <input name="pwd" type="text" style="width:200px;margin-left: 11px" align="right" />
+				</div>
+				<br />
+				<p>
+					<input type="image" src="img/login.jpg" alt="Submit" style="width: 80px; height: auto" />
+					<a class="forget_pwd" href="forgetpwd.php">Forget Password?</span>
+				</p>
+			</form>
+			</div>
 		</div>
 	</body>
 </html>

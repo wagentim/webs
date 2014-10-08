@@ -13,6 +13,7 @@
 	margin-right: 10px;
 	color: black;
 	font-size: 80%;
+	font-style: oblique;
 }
 
 .login_block {
@@ -44,6 +45,17 @@
 }
 
 .sub_text {
-	font-size:small;
-	color:grey;
+	font-size:medium;
+	color:gray;
+}
+
+.login_form_block {
+	display: table-cell;
+	width: inherit;
+	padding-left: 20%;
+}
+
+.forget_pwd {
+	font-size: small;
+	margin-left: 28%;
 }

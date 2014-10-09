@@ -17,6 +17,15 @@
 	</head>
 
 	<body>
-		
+		<div class="header_wrap">
+			<div class="header_content">
+				<nav>
+					<ul>
+						<li>Home Apps</li>
+						<li>Business System</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</body>
 </html>

@@ -1,17 +1,15 @@
-.fixed_headerbar_background {
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: #d7d7d7;
-	color: white;
-	height: 20px;
-	width: 100%;
+* {
+	margin: 0;
 }
-.fixed_headerbar_content {
-	text-align: right;
-	margin-top: 2px;
-	margin-right: 10px;
-	color: black;
-	font-size: 80%;
-	font-style: oblique;
+
+div.header_wrap {
+	background-color: #3399FF;	/* color: light blue */
+	height: 50px;
+}
+
+div.header_content {
+	color: white;
+	font-size: xx-large;
+	margin-left: 5%;
+	padding-top: 5px;
 }

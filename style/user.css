@@ -1,0 +1,17 @@
+.fixed_headerbar_background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #d7d7d7;
+	color: white;
+	height: 20px;
+	width: 100%;
+}
+.fixed_headerbar_content {
+	text-align: right;
+	margin-top: 2px;
+	margin-right: 10px;
+	color: black;
+	font-size: 80%;
+	font-style: oblique;
+}

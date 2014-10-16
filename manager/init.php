@@ -1,8 +1,5 @@
 <?php
-    
-    /**
-	 * avoiding directly access to this file
-	 */
+    /* avoiding directly access to this file */
     if (!defined('manager'))
 	{
     	die('Hacking attempt');
@@ -15,76 +12,72 @@
 	
 	define('ROOT_PATH_MANAGER', dirname(__FILE__));
 	
-	if (!file_exists(ROOT_PATH . 'data/install.lock') && !file_exists(ROOT_PATH . 'includes/install.lock')
-    && !defined('NO_CHECK_INSTALL'))
-{
-    header("Location: ./install/index.php\n");
+	/* Some Inital Settings */
+	@ini_set('memory_limit',        '64M');
+	@ini_set('session.cache_expire',  180);
+	@ini_set('session.use_trans_sid', 0);
+	@ini_set('session.use_cookies',   1);
+	@ini_set('session.auto_start',    0);
+	@ini_set('display_errors',        1);
 
-    exit;
-}
+	// TODO check if the following codes needed
+	if (DIRECTORY_SEPARATOR == '\\')
+	{
+	    @ini_set('include_path', '.;' . ROOT_PATH);
+	}
+	else
+	{
+	    @ini_set('include_path', '.:' . ROOT_PATH);
+	}
 
-/* 初始化设置 */
-@ini_set('memory_limit',          '64M');
-@ini_set('session.cache_expire',  180);
-@ini_set('session.use_trans_sid', 0);
-@ini_set('session.use_cookies',   1);
-@ini_set('session.auto_start',    0);
-@ini_set('display_errors',        1);
+	// TODO modify config.php later
+	require(ROOT_PATH . 'data/config.php');
 
-if (DIRECTORY_SEPARATOR == '\\')
-{
-    @ini_set('include_path', '.;' . ROOT_PATH);
-}
-else
-{
-    @ini_set('include_path', '.:' . ROOT_PATH);
-}
+	if (!defined('DEBUG_MODE'))
+	{
+	    define('DEBUG_MODE', 0);
+	}
+	// TODO perhaps the timezone part can be removed
+	if (PHP_VERSION >= '5.1' && !empty($timezone))
+	{
+	    date_default_timezone_set($timezone);
+	}
 
-require(ROOT_PATH . 'data/config.php');
+	$php_self = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
+	
+	if ('/' == substr($php_self, -1))
+	{
+	    $php_self .= 'index.php';
+	}
+	
+	define('PHP_SELF', $php_self);
 
-if (defined('DEBUG_MODE') == false)
-{
-    define('DEBUG_MODE', 0);
-}
+	// require(ROOT_PATH . 'includes/inc_constant.php');
+	// require(ROOT_PATH . 'includes/cls_ecshop.php');
+	// require(ROOT_PATH . 'includes/cls_error.php');
+	// require(ROOT_PATH . 'includes/lib_time.php');
+	// require(ROOT_PATH . 'includes/lib_base.php');
+	// require(ROOT_PATH . 'includes/lib_common.php');
+	// require(ROOT_PATH . 'includes/lib_main.php');
+	// require(ROOT_PATH . 'includes/lib_insert.php');
+	// require(ROOT_PATH . 'includes/lib_goods.php');
+	// require(ROOT_PATH . 'includes/lib_article.php');
 
-if (PHP_VERSION >= '5.1' && !empty($timezone))
-{
-    date_default_timezone_set($timezone);
-}
-
-$php_self = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
-if ('/' == substr($php_self, -1))
-{
-    $php_self .= 'index.php';
-}
-define('PHP_SELF', $php_self);
-
-require(ROOT_PATH . 'includes/inc_constant.php');
-require(ROOT_PATH . 'includes/cls_ecshop.php');
-require(ROOT_PATH . 'includes/cls_error.php');
-require(ROOT_PATH . 'includes/lib_time.php');
-require(ROOT_PATH . 'includes/lib_base.php');
-require(ROOT_PATH . 'includes/lib_common.php');
-require(ROOT_PATH . 'includes/lib_main.php');
-require(ROOT_PATH . 'includes/lib_insert.php');
-require(ROOT_PATH . 'includes/lib_goods.php');
-require(ROOT_PATH . 'includes/lib_article.php');
-
-/* 对用户传入的变量进行转义操作。*/
-if (!get_magic_quotes_gpc())
-{
-    if (!empty($_GET))
-    {
-        $_GET  = addslashes_deep($_GET);
-    }
-    if (!empty($_POST))
-    {
-        $_POST = addslashes_deep($_POST);
-    }
-
-    $_COOKIE   = addslashes_deep($_COOKIE);
-    $_REQUEST  = addslashes_deep($_REQUEST);
-}
+	/* 对用户传入的变量进行转义操作。*/
+	if (!get_magic_quotes_gpc())
+	{
+	    if (!empty($_GET))
+	    {
+	        $_GET  = addslashes_deep($_GET);
+	    }
+	    if (!empty($_POST))
+	    {
+	        $_POST = addslashes_deep($_POST);
+	    }
+	
+	    $_COOKIE   = addslashes_deep($_COOKIE);
+	    $_REQUEST  = addslashes_deep($_REQUEST);
+	}
 
 /* 创建 ECSHOP 对象 */
 $ecs = new ECS($db_name, $prefix);

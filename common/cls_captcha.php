@@ -1,38 +1,24 @@
 <?php
 
 /**
- * ECSHOP 验证码图片类
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: cls_captcha.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+ * verification image
+ */
 
 class captcha
 {
     /**
-     * 背景图片所在目录
+     * path for background image
      *
      * @var string  $folder
      */
-    var $folder     = 'data/captcha';
+    var $folder = NULL;
 
     /**
-     * 图片的文件类型
+     * image type
      *
      * @var string  $img_type
      */
-    var $img_type   = 'png';
+    var $img_type = 'png';
 
     /*------------------------------------------------------ */
     //-- 存在session中的名称
@@ -259,7 +245,7 @@ class captcha
     }
 
     /**
-     * 生成随机的验证码
+     * generate random verification text
      *
      * @access  private
      * @param   integer $length     验证码长度

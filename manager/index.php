@@ -1,5 +1,4 @@
 <?php
-    
     define('manager', TRUE);
-	require(dirname(__FILE__) . '/init.php');
+	require(dirname(__FILE__) .DIRECTORY_SEPARATOR.'init.php');
 ?>

@@ -1,26 +1,8 @@
 <?php
 
-/**
- * ECSHOP JSON 绫
- * ===========================================================
- * * 鐗堟潈鎵€鏈 2005-2012 涓婃捣鍟嗘淳缃戠粶绉戞妧鏈夐檺鍏?徃锛屽苟淇濈暀鎵€鏈夋潈鍒┿€
- * 缃戠珯鍦板潃: http://www.ecshop.com锛
- * ----------------------------------------------------------
- * 杩欎笉鏄?竴涓?嚜鐢辫蒋浠讹紒鎮ㄥ彧鑳藉湪涓嶇敤浜庡晢涓氱洰鐨勭殑鍓嶆彁涓嬪?绋嬪簭浠ｇ爜杩涜?淇?敼鍜
- * 浣跨敤锛涗笉鍏佽?瀵圭▼搴忎唬鐮佷互浠讳綍褰㈠紡浠讳綍鐩?殑鐨勫啀鍙戝竷銆
- * ==========================================================
- * $Author: liubo $
- * $Id: cls_json.php 17217 2011-01-19 06:29:08Z liubo $
- */
-
-if (!defined('IN_ECS'))
+if (!defined('wagentim'))
 {
     die('Hacking attempt');
-}
-
-if (!defined('EC_CHARSET'))
-{
-    define('EC_CHARSET', 'utf-8');
 }
 
 class JSON
@@ -37,7 +19,7 @@ class JSON
             $_force = $force;
         }
 
-        if ($_force && EC_CHARSET == 'utf-8' && function_exists('json_encode'))
+        if ($_force && CHARSET == 'utf-8' && function_exists('json_encode'))
         {
             return json_encode($arg);
         }
@@ -147,7 +129,7 @@ class JSON
             return false;
         }
 
-        if (EC_CHARSET === 'utf-8' && function_exists('json_decode'))
+        if (CHARSET === 'utf-8' && function_exists('json_decode'))
         {
             return addslashes_deep_obj(json_decode(stripslashes($text),$type));
         }

@@ -1,19 +1,6 @@
 <?php
 
-/**
- * ECSHOP MYSQL 公用类库
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: cls_mysql.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-if (!defined('IN_ECS'))
+if (!defined('wagentim'))
 {
     die('Hacking attempt');
 }
@@ -45,7 +32,7 @@ class cls_mysql
 
     var $mysql_disable_cache_tables = array(); // 不允许被缓存的表，遇到将不会进行缓存
 
-    function __construct($dbhost, $dbuser, $dbpw, $dbname = '', $charset = 'gbk', $pconnect = 0, $quiet = 0)
+    function __construct($dbhost, $dbuser, $dbpw, $dbname = '', $charset = '', $pconnect = 0, $quiet = 0)
     {
         $this->cls_mysql($dbhost, $dbuser, $dbpw, $dbname, $charset, $pconnect, $quiet);
     }
